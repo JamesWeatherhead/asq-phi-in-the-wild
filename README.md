@@ -55,7 +55,7 @@ Open `http://localhost:8765/`. Project links use `#project/<id>`.
 
 ## Publishing
 
-GitHub Pages serves `main` from the repository root. A push to `main` triggers the Pages build. Relative assets and `.nojekyll` support the repository site path. No build framework, runtime package installation, external fonts, analytics or CDN dependencies are required.
+GitHub Pages serves `main` from the repository root. A push to `main` triggers the Pages build. Relative assets and `.nojekyll` support the repository site path. No build framework, runtime package installation, external fonts, analytics or CDN dependencies are required. When changing code or styles, update the asset version in the HTML and module imports so returning visitors receive the new files; evidence JSON is fetched without browser caching.
 
 To suggest a documented use or correction, [open an issue](https://github.com/JamesWeatherhead/asq-phi-in-the-wild/issues/new) with the project name and primary evidence URL.
 

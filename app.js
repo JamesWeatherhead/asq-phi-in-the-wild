@@ -1,4 +1,4 @@
-import {createWork} from './art.js';
+import {createWork} from './art.js?v=20261023-2';
 const $=s=>document.querySelector(s);
 const h=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const url=v=>{try{const u=new URL(v);return u.protocol==='https:'?h(u.href):'#'}catch{return '#'}};

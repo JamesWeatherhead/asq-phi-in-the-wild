@@ -16,7 +16,7 @@ for r in projects:
  for s in r['sources']: assert s['url'].startswith('https://')
 for f in root.glob('*.html'):
  for link in re.findall(r'(?:href|src)="([^"#]+)"',f.read_text()):
-  if not re.match(r'^(?:https?:|mailto:)',link): assert (root/link.split('#')[0]).exists(),(f.name,link)
+  if not re.match(r'^(?:https?:|mailto:)',link): assert (root/link.split('#')[0].split('?')[0]).exists(),(f.name,link)
 reuse=[r for r in projects if r['external'] and r['verified'] and r['countedAsReuse']]
 slots=[r['artSlot'] for r in reuse]
 assert len(slots)==len(set(slots)), 'Duplicate artwork slots'

@@ -1,5 +1,5 @@
 /* A source-linked research route map. No ambient motion. */
-import {transit,mobileMapSize} from './theme-transit.js';
+import {transit,mobileMapSize} from './theme-transit.js?v=20261023-2';
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export async function createWork(records,{onSelect,onHover,onCount}){
  const ordered=records.filter(r=>r.countedAsReuse).sort((a,b)=>(a.date||'9999').localeCompare(b.date||'9999')||a.id.localeCompare(b.id));
