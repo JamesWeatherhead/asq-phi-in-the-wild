@@ -6,7 +6,7 @@ A calm, source-linked map of research and software reuse of ASQ-PHI.
 
 The October 23, 2026 audit documents **11 external reuse projects**: 8 evaluations, 2 software integrations, and 1 methodological adaptation. Two mention-only records are listed separately and excluded from reuse counts. Related papers, versions, repositories and model cards are grouped into one project record.
 
-Select a station for its project and sources. Hover or keyboard focus reveals its documented date and reference. Select the ASQ-PHI origin for the original paper, repository and dataset.
+Select a station for its project and sources. Hover or keyboard focus reveals its documented date and reference. Select the ASQ-PHI origin for the original paper, repository and dataset. On phones, the map becomes a taller, scrollable composition with readable names and 44-pixel station targets.
 
 ## Original work
 
