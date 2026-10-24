@@ -1,0 +1,38 @@
+ASQ-PHI software and model adoption audit
+Audit date: 23 October 2026 (America/Los_Angeles)
+
+Scope and reproducibility
+Searched the open web with quoted ASQ-PHI, package/model names and dataset DOI; used the connected GitHub code-search tool successfully for ASQ-PHI, csz5dzp7nx and Inkguard; retrieved primary repository files and commit histories directly through GitHub public APIs/raw files; queried Hugging Face model/dataset APIs and full cards; fetched PyPI's outis JSON including all release timestamps. The code-search connector returned relevant excerpts and immutable commit links; it was not blocked. This software sub-audit did not attempt unauthenticated GitHub code-search REST, so any root audit note about that endpoint returning 403 should be qualified by the successful connected-code-search coverage. Search is broad but cannot establish exhaustive coverage of unindexed/private artifacts.
+
+Read scope
+Full Hank model card (14.6 kB), Outis README/model card/benchmarks README/external verification guide/scorers and result descriptions, Pype ingestion documentation and full ASQ parser/CLI, Inkguard README and full results report, full bbanany Korean dataset card and statistics metadata, browser-local project README/dataset manifest/aggregate ASQ JSON and method reports, CEAP README/full ASQ loader/public-corpus harness, YPCC data policy/readme/demo benchmark, and KlusAI prior-art document. The parent scholarly audit handles entire Bao, MedDeID and AegisVox papers. No models were downloaded or inference rerun; publication of metrics is verified, accuracy of execution is not independently replicated.
+
+Verified classifications
+Four evaluation-use families: Hank Safe Harbor; Outis; Inkguard; aaronge-2020 browser-local de-identification.
+Two implemented software integrations without verified completed ASQ runs: Pype-Deid and CEAP.
+One design-influence family: bbanany Korean Step 4 dataset (related Qwen model not counted separately).
+Two mention-only families: YPCC clinical-gliner-kg and KlusAI EuroPriv-Bench. Their public references are verified; actual execution or evaluation is not.
+Guardian Layer software is the companion repository of Bao arxiv:2608.03172, confirmed by repository homepage and report contents. It is not an additional independent use and is excluded from this sub-audit's entries to avoid duplicating the scholarly record.
+
+Evidence and important caveats
+Hank's card contains an ASQ-PHI table with recall .966 and 5/219 negative queries changed. It labels AWS figures cite-only, reruns other open systems, and describes distinct-value detection recall rather than the character coverage used elsewhere. It states all ages including 90+ are left unredacted, a documented Safe Harbor policy deviation. The linked hank-ai/hank-safe-harbor GitHub repository returned 404, so the public card is the verified evidence and the linked harness was not independently examined. Hugging Face author API currently lists one hank-ai model, this model; no separate family variants were established.
+
+Outis explicitly distinguishes development evidence from independent tests. Its headline aligned character coverage is 99.94% with .18% non-PHI removal; ASQ failures were inspected during development. The guide provides original-gold and aligned views, record/model hashes, windowing and name merging. Do not compare these results numerically to Hank entity recall or a different annotation policy. PyPI 0.1.0 appeared 10 October; current 0.4.0 uploaded 13 October. GitHub ASQ loader public-layout commit dated 10 October is the dated evidence, not a claim that development began then.
+
+Inkguard's full report says measurement 18 October 2026; public repository initial commit is 20 October. It reports odd-half held-out removal 97.1%, even-half tuning removal 96.8%, and 8/219 harmless queries changed. A scorer correction occurred 18 October. The tool and its internally generated benchmarks were written with the same AI assistant; no independent human code review is claimed. Use 20 October for a cumulative PUBLIC-evidence timeline or label 18 October strictly as reported evaluation date.
+
+Pype's actual source implements parsing, JSONL/BRAT output and reproducible randomized split. This is stronger than a mention but does not establish a trained model or scored run. Parser silently skips unaligned values and uses sequential substring matching, so conversion choices must accompany any later metrics.
+
+Bbanany's full Korean card says it referred to CAPID's realistic context and ASQ-PHI's query/record/memo expression variety. The English statistics metadata states exactly: ASQ-PHI: question, case note, concise answer and record-style variation. This quoted English phrase is original metadata, not an unlabeled machine translation. Metadata source_references includes sources/asq_phi/synthetic_clinical_queries.txt (1,051 queries). Conservative classification remains design influence because record-level training/evaluation reuse is not established. The card explicitly says profile-separated validation/test share frames and sentence fragments with training and should be in-domain diagnostic only. A linked fine-tuned Qwen model is not another independent ASQ adoption.
+
+Browser-local de-identification manifest reports use of all 1,051 queries as a different genre; exact micro F1 .6239 and character recall .9272. Committed score JSON accompanies the claim. Stanford base plus frozen D1-D12 rules; no venue/acceptance was independently verified.
+
+CEAP has an ASQ-specific loader integrated with the public benchmark runner and fetch utility. Only implementation is verified; no completed results for that dataset were found. Repository name IEEE_Healthcom_2026 does not prove acceptance. Loader skips unmatched or unrecognized values and maps category schema.
+
+YPCC data policy and catalog list ASQ as an extra/recommended open PHI set, but its tree and demo benchmark did not reveal an ASQ-specific loader or scored report. Keep mention-only. KlusAI's prior-art table groups MedPriv-Bench / ASQ-PHI and contains broad characterization; record this as a mention, not authoritative evidence about ASQ capabilities.
+
+Dates
+entries.json distinguishes dated public evidence from universal first-use dates. Full GitHub hashes have been expanded from source commit-history API responses wherever applicable. Hank and bbanany date sources are immutable Hugging Face upload commits; Inkguard evaluation date is explicitly labeled and publicEvidenceDate is separately supplied. None of these dates establishes private development start or an exhaustive earliest public appearance.
+
+Local evidence
+entries.json is the normalized ingestion deliverable, with primary URLs, source-linked dates, quoted excerpts (25-word maximum per quoted source), caveats and source-review descriptions. Downloaded cards, metadata, repository files, history responses and trees remain alongside this report for review. No public repository was edited or published.

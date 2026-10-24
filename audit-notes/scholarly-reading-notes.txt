@@ -1,0 +1,27 @@
+# Scholarly source audit, 23 October 2026
+
+Three independent projects are verified as evaluation reuse: Custodian Labs/Guardian Layer, University of Antwerp–UZA/MedDeID, and Oracle Health AI/AegisVox. The paper, repository, dashboard and related model-card artifacts of one project should stay grouped. These are preprints; current primary pages did not establish journal or conference acceptance.
+
+The ready-to-import website records are in `entries.json`. Expanded fields, bibliographic index checks and deduplication notes are in `scholarly-audit.json`.
+
+## Source and reading record
+
+Retrieved primary HTML for Bao v1 and latest v5, MedDeID v1 and AegisVox v1. Saved HTML and extracted text. Also downloaded PDFs of the latest three. Reviewed their scientific framing, methods, evaluation, results, limitations, supplementary material and references, with emphasis on every ASQ-PHI occurrence and endpoint. MedDeID's embedded annotation guideline does not render in HTML; its PDF appendix was extracted separately and inspected. AegisVox's available appendices include its independent detector experiment, separate audio populations, endpoint definitions, failure registry, model-judge qualification, reproducibility and executable prompt blocks. No experiment was rerun, no private data obtained, and no model/provider result independently replicated.
+
+## Version issue that materially changes the website
+
+Bao v5 is dated 14 October 2026; the first ASQ use is already present in v1, 4 August 2026. Latest Appendix A explicitly corrects a v1 gold-span re-projection bug and independent-observation statistics. Several causal explanations in v1 are withdrawn. Preserve the initial submission date for the dated evidence timeline, but link and summarize v5. Avoid an undifferentiated headline that repeats older dashboard scores.
+
+## Evidence interpretation
+
+All three use actual benchmark data rather than merely citing ASQ-PHI. Bao uses 250 queries; MedDeID and AegisVox use 1,051. AegisVox uses text queries to test its detector; its audio experiments use other corpora. Do not call this an ASQ speech dataset use. There is no verified product deployment or regulatory certification here.
+
+The metrics are incompatible across studies. Bao measures label-agnostic overlap detection on replaced spans. MedDeID measures annotation-character recall and character over-redaction, with a separately labeled age sensitivity. AegisVox reports exact typed and boundary-tolerant entity metrics under both a reduced contract intersection and full ASQ ontology. A single leaderboard would be misleading.
+
+## Citation indexes and search coverage
+
+Live API response files preserve Crossref, OpenAlex and Semantic Scholar results. Crossref returned 0 indexed citing works; OpenAlex returned 0; Semantic Scholar returned 2, Bao and AegisVox. These are incomplete indexing snapshots, not a dataset-adoption count. MedDeID full text verifies a use that was absent from the returned Semantic Scholar list.
+
+Google Scholar exact search was attempted directly through the web tool but was inaccessible. A Scholar-restricted ordinary web search yielded no usable direct Scholar result; no Scholar total is asserted. Broad exact-name, title-phrase, dataset-DOI, article-DOI and arXiv queries found no fourth independent scholarly reuse within this bounded audit. Search mirrors and automated summaries were treated as leads, never extra adoptions.
+
+The origin paper's PMC record lists electronic publication 11 February 2026 and an April 2026 collection issue. It is the origin, not external adoption. If showing a release milestone, distinguish that publication date from the dataset's independently verified deposit/release date.

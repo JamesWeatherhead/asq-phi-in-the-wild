@@ -1,0 +1,691 @@
+{
+  "auditDate": "2026-10-23",
+  "countingRule": "External projects with verified evaluation, integration, or methodological adaptation. Mention-only records are excluded from reuse counts and growth. One project per related artifact family.",
+  "projects": [
+    {
+      "id": "custodian-bao",
+      "name": "Custodian Labs · Guardian Layer",
+      "owner": "Custodian Labs",
+      "category": "Evaluation use",
+      "summary": "Used a 250-query ASQ-PHI subset to compare downstream detection before and after surrogate replacement, within a seven-benchmark study. This tests detectability of replaced identifiers, a proxy for utility.",
+      "methodology": "Latest v5 ASQ endpoint includes 534 replaced spans. Label-agnostic overlap recall across the detector panel is 91.9% before versus 91.1% after replacement; paired change −0.81 percentage points, 90% document-cluster bootstrap interval −1.37 to −0.26.",
+      "caveats": [
+        "Only the replaced population is tested; replacement covers 80.9% of ASQ gold identifiers.",
+        "Gemma 4 31B transformed ASQ run covers 101/250 documents.",
+        "v2 corrected v1 span alignment and statistics; v1 explanations of truncation and redaction were withdrawn. Use v5 for current numerical claims.",
+        "Authors are affiliated with the transform's developer. No independent replication performed in this audit."
+      ],
+      "quote": "Seven clinical and general-PII benchmarks, 250 documents each: ASQ-PHI (English clinical queries)",
+      "sourceLabel": "Surrogate Substitution Preserves PHI Detectability: A Multi-Detector Equivalence Study · Section 5 benchmarks; Section 6.2/Table 2; Section 6.4; Appendix A version corrections",
+      "sourceUrl": "https://arxiv.org/html/2608.03172v5",
+      "sources": [
+        {
+          "label": "Surrogate Substitution Preserves PHI Detectability: A Multi-Detector Equivalence Study (v5)",
+          "url": "https://arxiv.org/html/2608.03172v5"
+        },
+        {
+          "label": "Submission history",
+          "url": "https://arxiv.org/abs/2608.03172"
+        },
+        {
+          "label": "Related project artifact",
+          "url": "https://github.com/Custodian-Labs/guardian-layer-phi-benchmark"
+        },
+        {
+          "label": "Related project artifact",
+          "url": "https://custodianai.pages.dev/code"
+        },
+        {
+          "label": "Related project artifact",
+          "url": "https://custodianlabs.pages.dev"
+        }
+      ],
+      "date": "2026-08-04",
+      "dateLabel": "arXiv v1 submission date; v1 full text explicitly uses ASQ-PHI",
+      "dateSourceUrl": "https://arxiv.org/abs/2608.03172",
+      "status": "arXiv preprint; no peer-reviewed venue verified",
+      "verified": true,
+      "external": true,
+      "verifiedAt": "2026-10-23",
+      "countedAsReuse": true,
+      "researchPreprint": true,
+      "sourceReview": "Full paper, methods, evaluation, references and appendices reviewed; PDF supplements inspected where HTML omitted content.",
+      "title": "Surrogate Substitution Preserves PHI Detectability: A Multi-Detector Equivalence Study",
+      "authors": "Qiming Bao; Sherry J. H. Feng; Kim Chester Eugenio; Meng Fon",
+      "version": "v5",
+      "evidenceLocator": "Section 5 benchmarks; Section 6.2/Table 2; Section 6.4; Appendix A version corrections",
+      "deduplication": "Paper versions, benchmark repository, dashboard, slides and reproducibility page form one adoption record.",
+      "display": {
+        "shortName": "Guardian Layer · Custodian",
+        "oneLine": "Tests replacement effects on 250 ASQ-PHI queries.",
+        "typeShort": "Evaluation",
+        "sourceButtons": [
+          "Paper",
+          "Code",
+          "Version history"
+        ]
+      },
+      "artSlot": 4,
+      "hover": {
+        "reference": "Bao et al. · arXiv:2608.03172 · v5",
+        "dateKind": "Preprint first submitted (v1)"
+      }
+    },
+    {
+      "id": "meddeid-hellemans",
+      "name": "University of Antwerp / UZA · MedDeID",
+      "owner": "University of Antwerp; Antwerp University Hospital",
+      "category": "Evaluation use",
+      "summary": "Evaluated a separately trained synthetic-English de-identifier on all 1,051 ASQ-PHI queries as an external portability benchmark, alongside six comparators.",
+      "methodology": "All 2,973 annotations were converted to character offsets; one required apostrophe normalization. Label-agnostic annotation-character recall was 98.90% (95% document-cluster interval 98.59–99.19). Raw non-PII character redaction was 6.21%; an age-exclusion sensitivity yielded 0.89%.",
+      "caveats": [
+        "English training and testing were synthetic; ASQ results do not establish real-English clinical performance.",
+        "The age-exclusion sensitivity removes redactions over unannotated numeric ages while retaining the original non-PII denominator; it changes the endpoint.",
+        "Character recall is not exact entity recall, and character over-redaction is not a hard-negative query false-positive rate.",
+        "Shared post-processing and differing taxonomies affect comparisons; do not combine scores into a cross-study leaderboard."
+      ],
+      "quote": "We included all 1,051 queries, of which 219 were hard negatives.",
+      "sourceLabel": "MedDeID enables locally governed clinical-text de-identification from real or synthetic training data · Methods: External English benchmark preparation; Results: English synthetic benchmarks; Supplementary Table S12",
+      "sourceUrl": "https://arxiv.org/html/2609.10049v1",
+      "sources": [
+        {
+          "label": "MedDeID enables locally governed clinical-text de-identification from real or synthetic training data (v1)",
+          "url": "https://arxiv.org/html/2609.10049v1"
+        },
+        {
+          "label": "Submission history",
+          "url": "https://arxiv.org/abs/2609.10049"
+        },
+        {
+          "label": "Related project artifact",
+          "url": "https://huggingface.co/stighellemans/meddeid-english-synth"
+        },
+        {
+          "label": "Related project artifact",
+          "url": "https://github.com/stighellemans/deid-battery"
+        },
+        {
+          "label": "Related project artifact",
+          "url": "https://github.com/stighellemans/meddeid-suite"
+        }
+      ],
+      "date": "2026-09-09",
+      "dateLabel": "arXiv v1 submission date",
+      "dateSourceUrl": "https://arxiv.org/abs/2609.10049",
+      "status": "arXiv preprint; no peer-reviewed venue verified",
+      "verified": true,
+      "external": true,
+      "verifiedAt": "2026-10-23",
+      "countedAsReuse": true,
+      "researchPreprint": true,
+      "sourceReview": "Full paper, methods, evaluation, references and appendices reviewed; PDF supplements inspected where HTML omitted content.",
+      "title": "MedDeID enables locally governed clinical-text de-identification from real or synthetic training data",
+      "authors": "Stig Hellemans; Tom Stroobants; Elyne Scheurwegs; Pieter Meysman; Philippe G. Jorens; Kris Laukens",
+      "version": "v1",
+      "evidenceLocator": "Methods: External English benchmark preparation; Results: English synthetic benchmarks; Supplementary Table S12",
+      "deduplication": "Manuscript, English model card, suite, battery and associated related MedDeID cards are one project adoption, unless a distinct later use is separately evidenced.",
+      "display": {
+        "shortName": "MedDeID",
+        "oneLine": "Tests an English de-identifier on all 1,051 queries.",
+        "typeShort": "Evaluation",
+        "sourceButtons": [
+          "Paper",
+          "Model",
+          "Code"
+        ]
+      },
+      "artSlot": 6,
+      "hover": {
+        "reference": "Hellemans et al. · arXiv:2609.10049",
+        "dateKind": "Preprint first submitted"
+      }
+    },
+    {
+      "id": "oracle-aegisvox",
+      "name": "Oracle Health AI · AegisVox",
+      "owner": "Oracle Health AI",
+      "category": "Evaluation use",
+      "summary": "Used all 1,051 ASQ-PHI queries for an independent text-detector evaluation within a long-form speech privacy study. This is a text benchmark use, separate from its 390-conversation audio experiments.",
+      "methodology": "Primary exact typed F1 is 94.4% over 2,147 contract-intersection gold elements. Full-ontology exact typed F1 is 79.9% over 2,973 elements; boundary-tolerant full-ontology F1 is 87.3%. Predictions occur in 48/219 hard-negative queries.",
+      "caveats": [
+        "The primary endpoint excludes ontology categories outside the frozen detector contract; both primary and full-ontology results must be shown together.",
+        "Facility/organization geography and literal-year annotation disagreements affect scoring.",
+        "Text detection scores do not estimate identifier recall in speech or end-to-end audio privacy and cannot be multiplied by replacement realization.",
+        "This is research evidence, not proof of Oracle product deployment, certification or endorsement."
+      ],
+      "quote": "We test text detection on all 1,051 synthetic ASQ-PHI queries",
+      "sourceLabel": "AegisVox: Factorized Privacy and Clinical Preservation for Long-Form Speech · Section 4.2; Section 5.2; Appendix H/Table 5 and category Table 6",
+      "sourceUrl": "https://arxiv.org/html/2610.14643v1",
+      "sources": [
+        {
+          "label": "AegisVox: Factorized Privacy and Clinical Preservation for Long-Form Speech (v1)",
+          "url": "https://arxiv.org/html/2610.14643v1"
+        },
+        {
+          "label": "Submission history",
+          "url": "https://arxiv.org/abs/2610.14643"
+        },
+        {
+          "label": "Related project artifact",
+          "url": "https://github.com/spraphul/aegisvox"
+        }
+      ],
+      "date": "2026-10-10",
+      "dateLabel": "arXiv v1 submission date",
+      "dateSourceUrl": "https://arxiv.org/abs/2610.14643",
+      "status": "arXiv preprint; no peer-reviewed venue verified",
+      "verified": true,
+      "external": true,
+      "verifiedAt": "2026-10-23",
+      "countedAsReuse": true,
+      "researchPreprint": true,
+      "sourceReview": "Full paper, methods, evaluation, references and appendices reviewed; PDF supplements inspected where HTML omitted content.",
+      "title": "AegisVox: Factorized Privacy and Clinical Preservation for Long-Form Speech",
+      "authors": "Praphul Singh; Akshat Agarwal; Ratul Ghosh; Aashna Kanuga; Devashish Khatwani; Anurag Dwarakanath; Sri Gadde; Krishnaram Kenthapadi",
+      "version": "v1",
+      "evidenceLocator": "Section 4.2; Section 5.2; Appendix H/Table 5 and category Table 6",
+      "deduplication": "Manuscript, appendices and code repository form one project record.",
+      "display": {
+        "shortName": "AegisVox · Oracle Health AI",
+        "oneLine": "Evaluates text detection on all 1,051 queries within a speech-privacy study.",
+        "typeShort": "Evaluation",
+        "sourceButtons": [
+          "Paper",
+          "Code",
+          "Version history"
+        ]
+      },
+      "artSlot": 8,
+      "hover": {
+        "reference": "Singh et al. · arXiv:2610.14643",
+        "dateKind": "Preprint first submitted"
+      }
+    },
+    {
+      "id": "hank-safe-harbor",
+      "name": "HANK Safe Harbor",
+      "owner": "Hank AI",
+      "category": "Evaluation use",
+      "summary": "Uses all 1,051 ASQ-PHI queries as an external benchmark for a local two-encoder detect-and-replace pipeline.",
+      "methodology": "RoBERTa-large and XLM-R-large union plus structural detectors and consistent fake replacement. Reports recall 0.966 on 832 PHI-positive queries and hard-negative over-redaction 2.3% (5/219).",
+      "caveats": [
+        "Author-reported results; this audit did not rerun inference.",
+        "AWS baseline is copied from ASQ-PHI authors, not rerun.",
+        "ASQ-PHI recall is not interchangeable with character-level recall reported by other projects.",
+        "Card discloses ages including 90+ are not treated as PHI; this differs from Safe Harbor.",
+        "One adoption family: do not count weight formats or related model cards as separate users.",
+        "The Hugging Face card is accessible; its linked GitHub repository returned 404 during this audit, limiting independent harness review."
+      ],
+      "quote": "Independent public benchmark — ASQ-PHI",
+      "sourceLabel": "Model card",
+      "sourceUrl": "https://huggingface.co/hank-ai/hank-safe-harbor",
+      "sources": [
+        {
+          "label": "Model card",
+          "url": "https://huggingface.co/hank-ai/hank-safe-harbor"
+        }
+      ],
+      "date": "2026-06-28",
+      "dateLabel": "Model-card commit",
+      "dateSourceUrl": "https://huggingface.co/hank-ai/hank-safe-harbor/commit/68983f1da2460444a8b4d62995b7ed4eed99b703",
+      "status": "Public software",
+      "verified": true,
+      "external": true,
+      "sourceReview": "Full linked primary document and relevant implementation/protocol files read; no inference rerun.",
+      "verifiedAt": "2026-10-23",
+      "countedAsReuse": true,
+      "display": {
+        "shortName": "HANK Safe Harbor",
+        "oneLine": "Reports evaluation of a local detection-and-replacement pipeline on all 1,051 queries.",
+        "typeShort": "Evaluation",
+        "sourceButtons": [
+          "Model card",
+          "Dated evidence"
+        ]
+      },
+      "artSlot": 1,
+      "hover": {
+        "reference": "Hank AI · model card · 68983f1d",
+        "dateKind": "Model-card commit"
+      }
+    },
+    {
+      "id": "outis",
+      "name": "Outis",
+      "owner": "Eric Hauser",
+      "category": "Evaluation use",
+      "summary": "Benchmarks Outis, MedDeID and GLiNER on all 1,051 queries; explicitly labels ASQ-PHI as development evidence.",
+      "methodology": "DeBERTa-v3-base BIOES detector. Policy-aligned, label-agnostic ASQ scores: PHI characters masked 99.94%, non-PHI removed 0.18%, fully masked PHI documents 99.52%. Corpus/prediction hashes and pinned models are documented.",
+      "caveats": [
+        "Failures were inspected during development, so ASQ-PHI is not an independent test.",
+        "Headline numbers use policy alignment; exact spans, original gold and adjusted scoring give different results.",
+        "Benchmarks README says evaluation-only while explicitly acknowledging development exposure.",
+        "PyPI, GitHub and Hugging Face describe one project, deduplicated here."
+      ],
+      "quote": "Development evidence means failures on that benchmark have been inspected, so it is no longer an independent test.",
+      "sourceLabel": "Benchmark protocol",
+      "sourceUrl": "https://github.com/ewhauser/outis/blob/main/benchmarks/README.md",
+      "sources": [
+        {
+          "label": "Benchmark protocol",
+          "url": "https://github.com/ewhauser/outis/blob/main/benchmarks/README.md"
+        },
+        {
+          "label": "PyPI package",
+          "url": "https://pypi.org/project/outis/"
+        },
+        {
+          "label": "Scoring and policy alignment",
+          "url": "https://github.com/ewhauser/outis/blob/main/docs/external-verification.md"
+        }
+      ],
+      "date": "2026-10-10",
+      "dateLabel": "ASQ loader commit",
+      "dateSourceUrl": "https://github.com/ewhauser/outis/commit/6ce7fb336d57b05e7f8e584c151555cb03f48054",
+      "status": "Public software",
+      "verified": true,
+      "external": true,
+      "sourceReview": "Full linked primary document and relevant implementation/protocol files read; no inference rerun.",
+      "verifiedAt": "2026-10-23",
+      "countedAsReuse": true,
+      "display": {
+        "shortName": "Outis",
+        "oneLine": "Uses all 1,051 queries for evaluation and openly documented development.",
+        "typeShort": "Evaluation",
+        "sourceButtons": [
+          "Protocol",
+          "Package",
+          "Scoring"
+        ]
+      },
+      "artSlot": 9,
+      "hover": {
+        "reference": "Eric Hauser · Outis · 6ce7fb33",
+        "dateKind": "ASQ loader commit"
+      }
+    },
+    {
+      "id": "pype-deid",
+      "name": "Pype-Deid",
+      "owner": "mlei06",
+      "category": "Software integration",
+      "summary": "Includes a dedicated ASQ-PHI parser and command-line conversion to JSONL and BRAT, including train/validation/test export.",
+      "methodology": "Parses QUERY/PHI_TAGS records; matches tagged values into spans; can normalize query whitespace; random split defaults are 70%/15%/remainder.",
+      "caveats": [
+        "Integration establishes reusable ingestion support, not a completed training run or benchmark result.",
+        "Parser can skip unaligned values and matches values sequentially; downstream results depend on conversion choices."
+      ],
+      "quote": "Converts the ASQ-PHI synthetic clinical queries dataset into JSONL and/or BRAT.",
+      "sourceLabel": "Data-ingestion documentation",
+      "sourceUrl": "https://github.com/mlei06/Pype-Deid/blob/main/docs/data-ingestion.md",
+      "sources": [
+        {
+          "label": "Data-ingestion documentation",
+          "url": "https://github.com/mlei06/Pype-Deid/blob/main/docs/data-ingestion.md"
+        },
+        {
+          "label": "ASQ parser implementation",
+          "url": "https://github.com/mlei06/Pype-Deid/blob/main/src/pypedeid/ingest/asq_phi.py"
+        }
+      ],
+      "date": "2026-03-31",
+      "dateLabel": "ASQ conversion script commit",
+      "dateSourceUrl": "https://github.com/mlei06/Pype-Deid/commit/be1740305b57c3d10729bee063f608f0956f31e3",
+      "status": "Public software",
+      "verified": true,
+      "external": true,
+      "sourceReview": "Full linked primary document and relevant implementation/protocol files read; no inference rerun.",
+      "verifiedAt": "2026-10-23",
+      "countedAsReuse": true,
+      "display": {
+        "shortName": "Pype-Deid",
+        "oneLine": "Includes an ASQ-PHI parser and export to JSONL and BRAT.",
+        "typeShort": "Integration",
+        "sourceButtons": [
+          "Documentation",
+          "Parser"
+        ]
+      },
+      "artSlot": 0,
+      "hover": {
+        "reference": "mlei06 · Pype-Deid · be174030",
+        "dateKind": "ASQ conversion commit"
+      }
+    },
+    {
+      "id": "inkguard",
+      "name": "Inkguard",
+      "owner": "Alize Wajahat / inkguard-app",
+      "category": "Evaluation use",
+      "summary": "Uses ASQ-PHI to develop and evaluate a local document-redaction tool, with explicit odd/even tuning and held-out halves.",
+      "methodology": "Reports 97.1% identifiers removed on the odd half, 96.8% on the even tuning half; 8 of 219 hard negatives changed. Measures software before human review.",
+      "caveats": [
+        "Only the odd half is described as never used for tuning.",
+        "Results are author-reported and were not independently rerun.",
+        "Synthetic query benchmark does not validate real clinical records.",
+        "Scorer was corrected on 18 October; results depend on its alignment and identifier policy.",
+        "Evaluation date is reported as 18 October; publicly visible initial repository commit is 20 October 2026."
+      ],
+      "quote": "97.1% on the odd half (never used for tuning), 96.8% on the even half (used for tuning)",
+      "sourceLabel": "Version 0.25.0 results",
+      "sourceUrl": "https://github.com/inkguard-app/inkguard/blob/main/benchmark/RESULTS.md",
+      "sources": [
+        {
+          "label": "Version 0.25.0 results",
+          "url": "https://github.com/inkguard-app/inkguard/blob/main/benchmark/RESULTS.md"
+        }
+      ],
+      "date": "2026-10-20",
+      "dateLabel": "Public results commit; evaluation dated October 18",
+      "dateSourceUrl": "https://github.com/inkguard-app/inkguard/commit/23626637759870199b1c01ec6f171fc2c15ac147",
+      "status": "Public software",
+      "verified": true,
+      "external": true,
+      "sourceReview": "Full linked primary document and relevant implementation/protocol files read; no inference rerun.",
+      "publicEvidenceDate": "2026-10-20",
+      "reportedEvaluationDate": "2026-10-18",
+      "verifiedAt": "2026-10-23",
+      "countedAsReuse": true,
+      "display": {
+        "shortName": "Inkguard",
+        "oneLine": "Reports separate tuning and held-out evaluations for a local redaction tool.",
+        "typeShort": "Evaluation",
+        "sourceButtons": [
+          "Results",
+          "Dated evidence"
+        ]
+      },
+      "artSlot": 10,
+      "hover": {
+        "reference": "Inkguard · results · 23626637",
+        "dateKind": "Public results commit"
+      }
+    },
+    {
+      "id": "korean-step4",
+      "name": "Korean Step 4 PII candidate dataset",
+      "owner": "bbanany",
+      "category": "Methodological adaptation",
+      "summary": "Credits ASQ-PHI’s question, record and memo-style variety as inspiration for a 10,000-example Korean PII candidate-classification dataset.",
+      "methodology": "1,000 synthetic profiles × 10 tags; 8,000 train /1,000 validation /1,000 test. Designed for Qwen supervised tuning after an upstream NER stage; source-reference metadata points to 1,051 ASQ-PHI queries.",
+      "caveats": [
+        "This documents adaptation of the dataset-construction approach; direct reuse of ASQ-PHI records for training or evaluation was not established.",
+        "Validation and test share generation frames and phrase components with training; card limits them to in-domain diagnostics.",
+        "Related Qwen model is downstream of this dataset, not a separate independently verified ASQ-PHI adoption."
+      ],
+      "quote": "ASQ-PHI: question, case note, concise answer and record-style variation",
+      "sourceLabel": "Dataset card and source-reference metadata",
+      "sourceUrl": "https://huggingface.co/datasets/bbanany/step4_sllm_v2",
+      "sources": [
+        {
+          "label": "Dataset card and source-reference metadata",
+          "url": "https://huggingface.co/datasets/bbanany/step4_sllm_v2"
+        },
+        {
+          "label": "Generation statistics and source references",
+          "url": "https://huggingface.co/datasets/bbanany/step4_sllm_v2/blob/main/step4_final_10000_statistics.json"
+        }
+      ],
+      "date": "2026-07-27",
+      "dateLabel": "Dataset upload commit",
+      "dateSourceUrl": "https://huggingface.co/datasets/bbanany/step4_sllm_v2/commit/97c702e57352569c8c0b969c67ffbb5daafe28bc",
+      "status": "Public dataset",
+      "verified": true,
+      "external": true,
+      "sourceReview": "Full Korean dataset card read, including diversity and scope/limitations; English adaptation entry read in statistics metadata.",
+      "quoteLabel": "Exact English excerpt from source-reference metadata",
+      "verifiedAt": "2026-10-23",
+      "countedAsReuse": true,
+      "display": {
+        "shortName": "Korean PII dataset",
+        "oneLine": "ASQ-PHI’s variety of question and note styles informs a Korean synthetic dataset.",
+        "typeShort": "Methodological adaptation",
+        "sourceButtons": [
+          "Dataset card",
+          "Source metadata"
+        ]
+      },
+      "artSlot": 3,
+      "hover": {
+        "reference": "bbanany · step4_sllm_v2 · 97c702e5",
+        "dateKind": "Dataset upload commit"
+      }
+    },
+    {
+      "id": "browser-local-deid",
+      "name": "Browser-local clinical de-identification",
+      "owner": "aaronge-2020 / prerounding-checklist",
+      "category": "Evaluation use",
+      "summary": "Documents evaluation of a browser-local NER-and-rules pipeline on all 1,051 ASQ-PHI queries as a different clinical query genre.",
+      "methodology": "Stanford base + deterministic rules D1–D12; dataset manifest reports exact-span micro F1 0.6239 and character recall 0.9272; aggregate score JSON is committed.",
+      "caveats": [
+        "Different genre external validation is not a replacement for real-note evaluation.",
+        "Scores are author-reported and not independently rerun.",
+        "Label mapping and span-boundary conventions influence exact F1.",
+        "The repository describes a manuscript, but publication status was not verified."
+      ],
+      "quote": "all 1,051 queries, treated as a different clinical query genre, not a replacement for note evaluation",
+      "sourceLabel": "Dataset manifest",
+      "sourceUrl": "https://github.com/aaronge-2020/prerounding-checklist/blob/main/docs/deidentification/DATA.md",
+      "sources": [
+        {
+          "label": "Dataset manifest",
+          "url": "https://github.com/aaronge-2020/prerounding-checklist/blob/main/docs/deidentification/DATA.md"
+        },
+        {
+          "label": "Committed ASQ score summary",
+          "url": "https://github.com/aaronge-2020/prerounding-checklist/blob/main/docs/deidentification/external/asqphi_scores.json"
+        }
+      ],
+      "date": "2026-10-01",
+      "dateLabel": "Evaluation-record commit",
+      "dateSourceUrl": "https://github.com/aaronge-2020/prerounding-checklist/commit/82a746323e27d430237ecf8e5db6fbd8b9e5ca38",
+      "status": "Public software",
+      "verified": true,
+      "external": true,
+      "sourceReview": "Full linked primary document and relevant implementation/protocol files read; no inference rerun.",
+      "verifiedAt": "2026-10-23",
+      "countedAsReuse": true,
+      "display": {
+        "shortName": "Browser-local de-identification",
+        "oneLine": "Documents a browser-local detection pipeline’s evaluation on all 1,051 queries.",
+        "typeShort": "Evaluation",
+        "sourceButtons": [
+          "Data protocol",
+          "Scores"
+        ]
+      },
+      "artSlot": 7,
+      "hover": {
+        "reference": "aaronge-2020 · evaluation · 82a74632",
+        "dateKind": "Evaluation-record commit"
+      }
+    },
+    {
+      "id": "ceap",
+      "name": "CEAP public-corpus evaluation",
+      "owner": "Rojan-upreti",
+      "category": "Software integration",
+      "summary": "Adds ASQ-PHI as a public-corpus loader within the Cryptographic Enclave AI Pipeline evaluation framework.",
+      "methodology": "Loader fetches original query text, aligns value labels to character spans, maps categories to Safe Harbor and passes records to a public benchmark harness.",
+      "caveats": [
+        "Verified code integration does not prove an actual completed benchmark run.",
+        "Repository name references IEEE Healthcom 2026; conference acceptance was not verified.",
+        "Loader skips unmatched values and unrecognized categories, which can affect scoring coverage."
+      ],
+      "quote": "Load ASQ-PHI (Weatherhead et al., Data in Brief 2026). MIT, fully synthetic.",
+      "sourceLabel": "ASQ-PHI loader source",
+      "sourceUrl": "https://github.com/Rojan-upreti/IEEE_Healthcom_2026/blob/main/backend/eval/asq_phi.py",
+      "sources": [
+        {
+          "label": "ASQ-PHI loader source",
+          "url": "https://github.com/Rojan-upreti/IEEE_Healthcom_2026/blob/main/backend/eval/asq_phi.py"
+        }
+      ],
+      "date": "2026-08-30",
+      "dateLabel": "ASQ loader commit",
+      "dateSourceUrl": "https://github.com/Rojan-upreti/IEEE_Healthcom_2026/commit/08f0f4eca2b4f7c9fd3b72963ab28cc60112afb7",
+      "status": "Public software",
+      "verified": true,
+      "external": true,
+      "sourceReview": "Full linked primary document and relevant implementation/protocol files read; no inference rerun.",
+      "verifiedAt": "2026-10-23",
+      "countedAsReuse": true,
+      "display": {
+        "shortName": "CEAP",
+        "oneLine": "Includes an ASQ-PHI loader in its evaluation framework; no run verified.",
+        "typeShort": "Integration",
+        "sourceButtons": [
+          "Loader",
+          "Dated evidence"
+        ]
+      },
+      "artSlot": 5,
+      "hover": {
+        "reference": "Rojan-upreti · CEAP · 08f0f4ec",
+        "dateKind": "ASQ loader commit"
+      }
+    },
+    {
+      "id": "clinical-gliner-kg",
+      "name": "Clinical GLiNER KG",
+      "owner": "YPCC",
+      "category": "Citation or mention",
+      "summary": "Lists ASQ-PHI as an open synthetic extra PHI set in its data policy.",
+      "methodology": "Data-policy table distinguishes ASQ-PHI from bundled default synthetic PHI notes.",
+      "caveats": [
+        "This audit located a data-policy reference, but no ASQ-specific loader or scored ASQ result; do not count as confirmed dataset execution."
+      ],
+      "quote": "extra PHI set",
+      "sourceLabel": "Data policy",
+      "sourceUrl": "https://github.com/YPCC/clinical-gliner-kg/blob/main/docs/data-policy.md",
+      "sources": [
+        {
+          "label": "Data policy",
+          "url": "https://github.com/YPCC/clinical-gliner-kg/blob/main/docs/data-policy.md"
+        }
+      ],
+      "date": "2026-09-08",
+      "dateLabel": "Data-policy commit",
+      "dateSourceUrl": "https://github.com/YPCC/clinical-gliner-kg/commit/73985960f654e7630a497588a04a5661fd400ca6",
+      "status": "Public software",
+      "verified": true,
+      "external": true,
+      "sourceReview": "Full linked primary document and relevant implementation/protocol files read; no inference rerun.",
+      "verifiedAt": "2026-10-23",
+      "countedAsReuse": false,
+      "display": {
+        "shortName": "Clinical GLiNER KG",
+        "oneLine": "Names ASQ-PHI in its data policy; execution has not been verified.",
+        "typeShort": "Mention",
+        "sourceButtons": [
+          "Data policy"
+        ]
+      }
+    },
+    {
+      "id": "europriv-bench",
+      "name": "EuroPriv-Bench prior-art map",
+      "owner": "KlusAI",
+      "category": "Citation or mention",
+      "summary": "Names ASQ-PHI in a prior-art comparison while scoping a proposed European privacy benchmark.",
+      "methodology": "Prior-art table groups MedPriv-Bench / ASQ-PHI as English clinical research and lists it among artifacts to watch.",
+      "caveats": [
+        "No dataset reuse, ASQ-PHI benchmark run or software integration was verified.",
+        "The table groups distinct works and describes re-identification/utility broadly; do not adopt its characterization as evidence about ASQ-PHI."
+      ],
+      "quote": "MedPriv-Bench / ASQ-PHI",
+      "sourceLabel": "Prior-art comparison",
+      "sourceUrl": "https://github.com/klusai/europriv-bench/blob/main/docs/prior-art.md",
+      "sources": [
+        {
+          "label": "Prior-art comparison",
+          "url": "https://github.com/klusai/europriv-bench/blob/main/docs/prior-art.md"
+        }
+      ],
+      "date": "2026-05-30",
+      "dateLabel": "Prior-art scaffold commit",
+      "dateSourceUrl": "https://github.com/klusai/europriv-bench/commit/88ee75cbbe8c1990711ba4daa5702b73d9054dad",
+      "status": "Public software",
+      "verified": true,
+      "external": true,
+      "sourceReview": "Full linked primary document and relevant implementation/protocol files read; no inference rerun.",
+      "verifiedAt": "2026-10-23",
+      "countedAsReuse": false,
+      "display": {
+        "shortName": "EuroPriv-Bench",
+        "oneLine": "Includes ASQ-PHI in a prior-art map; no dataset use verified.",
+        "typeShort": "Mention",
+        "sourceButtons": [
+          "Prior-art map"
+        ]
+      }
+    },
+    {
+      "id": "protostar-ai",
+      "name": "Protostar AI",
+      "title": "Clinical privacy detection validation",
+      "category": "Evaluation use",
+      "publicationStatus": "Vendor validation page",
+      "organization": "Protostar AI, LLC",
+      "independentExternal": true,
+      "verifiedPublicUse": true,
+      "verificationDate": "2026-10-23",
+      "date": "2026-07-18",
+      "dateBasis": "Page last-updated date; earliest public use unknown",
+      "firstAppearance": null,
+      "sourceUrl": "https://protostarai.com/validation.html",
+      "summary": "ASQ-PHI appears in a commercial detector evaluation alongside public legal and synthetic corpora.",
+      "evidence": "The full validation page names ASQ-PHI and gives clinical detector metrics.",
+      "methodology": "Entity-level overlap matching; deterministic identifiers plus named-entity recognition.",
+      "caveats": [
+        "Vendor self-report; not independently rerun in this audit.",
+        "Label-policy corrections affect comparability; no public predictions linked on reviewed page.",
+        "The page reports 0.93 overall ASQ-PHI recall in one passage and 0.99 clinical recall in another context; do not collapse these into one score.",
+        "Source update date is not proven first use."
+      ],
+      "metrics": "Page reports clinical precision 0.98, recall 0.99 and F1 0.98 under its scoring policy; not a cross-system leaderboard.",
+      "sourceReview": "Entire rendered validation page and raw HTML reviewed.",
+      "owner": "Protostar AI, LLC",
+      "quote": "On the clinical corpus (ASQ-PHI) names run near 1.00.",
+      "sourceLabel": "Protostar AI validation page",
+      "sources": [
+        {
+          "label": "Validation and Benchmarks",
+          "url": "https://protostarai.com/validation.html"
+        }
+      ],
+      "dateLabel": "Page updated July 18, 2026; earliest public use unknown",
+      "dateSourceUrl": "https://protostarai.com/validation.html",
+      "status": "Vendor validation page; self-reported results",
+      "verified": true,
+      "external": true,
+      "verifiedAt": "2026-10-23",
+      "countedAsReuse": true,
+      "display": {
+        "shortName": "Protostar AI",
+        "oneLine": "Reports ASQ-PHI evaluation results on its validation page.",
+        "typeShort": "Evaluation",
+        "sourceButtons": [
+          "Validation"
+        ]
+      },
+      "artSlot": 2,
+      "hover": {
+        "reference": "Protostar AI · Validation and Benchmarks",
+        "dateKind": "Page updated; first use unknown"
+      }
+    }
+  ],
+  "origin": {
+    "reference": "Weatherhead et al. · Data in Brief 2026",
+    "dateKind": "Paper published online",
+    "date": "2026-02-11",
+    "doi": "10.1016/j.dib.2026.112586",
+    "name": "ASQ-PHI",
+    "paper": "https://doi.org/10.1016/j.dib.2026.112586",
+    "github": "https://github.com/JamesWeatherhead/asq-phi",
+    "dataset": "https://data.mendeley.com/datasets/csz5dzp7nx/1",
+    "datasetDate": "2025-11-21"
+  }
+}

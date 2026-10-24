@@ -1,0 +1,25 @@
+# Queries run on 2026-10-23
+Web search:
+- "ASQ-PHI"
+- "10.1016/j.dib.2026.112586"
+- "ASQ-PHI" Protostar
+- "ASQ-PHI" with exclusions for canonical repository, personal site, PMC, publisher, Mendeley (several rounds)
+- "csz5dzp7nx" and variant excluding Mendeley/GitHub
+- "adversarial synthetic queries"
+- "ASQ-PHI" benchmark -Weatherhead
+- "ASQ-PHI" site:arxiv.org
+- "ASQ-PHI" site:semanticscholar.org
+- "ASQ-PHI" site:huggingface.co
+- "ASQ-PHI" "arxiv"
+- "ASQ PHI" deidentification
+- "ASQ-PHI" "Inkguard" (two rounds, including benchmark)
+- "ASQ-PHI" "de-identification" -Weatherhead
+- "10.1016/j.dib.2026.112586" -Weatherhead
+- "ASQ-PHI" "privacy" "benchmark" company with university false-positive exclusions
+- "ASQ-PHI" site:scholar.google.com
+- "ASQ-PHI" "Protostar" -site:protostarai.com
+- "ASQ-PHI" "GitHub" with canonical/personal-site exclusions
+
+Direct APIs and fetches: fetch-log.json, fetch-log-2.json, fetch-log-3.json retain exact URLs, outcome/status, body sizes. Raw successful responses saved next to logs. Web-tool successful Mendeley open supplies visible release date even though direct raw request was blocked.
+
+Search result dates like “3 months ago” and crawl dates were not used as publication dates. Index counts were not used as adoption counts. No additional independent reuse beyond assigned leads was verified in this discovery portion.
